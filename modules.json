@@ -1,24 +1,13 @@
 {
   "compilerOptions": {
-    "lib": [
-      "dom",
-      "es2017"
-    ],
+    "lib": ["dom", "es2017"],
     "baseUrl": ".",
     "strict": true,
     "paths": {
-      "@components/*": [
-        "./src/componentc/*"
-      ],
-      "@components": [
-        "./src/components"
-      ],
-      "@pages/*": [
-        "./src/pages/*"
-      ],
-      "@pages": [
-        "./src/pages"
-      ]
+      "@components/*": ["./src/componentc/*"],
+      "@components": ["./src/components"],
+      "@pages/*": ["./src/pages/*"],
+      "@pages": ["./src/pages"]
     }
   }
 }
