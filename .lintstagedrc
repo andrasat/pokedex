@@ -1,0 +1,7 @@
+{
+  "src/**/*.tsx": [
+    "pretty-quick ---staged",
+    "eslint src/ --fix",
+    "git add"
+  ]
+}
