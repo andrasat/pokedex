@@ -1,15 +1,15 @@
 import React from 'react';
-import './App.css';
+import { AppWrapper, AppHeader, AppLink } from './App.module.scss';
 
 // ADD COMMENT
 const App: React.FC = () => (
-  <div className="App">
-    <header className="App-header">
+  <div className={AppWrapper}>
+    <header className={AppHeader}>
       <p>
         Edit <code>src/App.tsx</code> and save to reload
       </p>
       <a
-        className="App-link"
+        className={AppLink}
         href="https://reactjs.org"
         target="_blank"
         rel="noopener noreferrer"
