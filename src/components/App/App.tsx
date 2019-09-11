@@ -1,10 +1,13 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
+
+import { LandingPage } from '../../pages';
 import { AppWrapper, AppHeader, AppLink } from './App.module.scss';
 
-// ADD COMMENT
 const App: React.FC = () => (
   <div className={AppWrapper}>
     <header className={AppHeader}>
+      <Route exact path="/" component={LandingPage} />
       <p>
         Edit <code>src/App.tsx</code> and save to reload
       </p>
