@@ -5,9 +5,105 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+  color: $pokemon-font-color;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  h1 {
+    font-weight: 700;
+    font-size: 5.975rem;
+  }
+
+  h2 {
+    font-weight: 700;
+    font-size: 4.975rem;
+  }
+
+  h3 {
+    font-weight: 700;
+    font-size: 3.975rem;
+  }
+
+  h4 {
+    font-weight: 700;
+    font-size: 2.975rem;
+  }
+
+  h5 {
+    font-weight: 700;
+    font-size: 1.975rem;
+  }
+
+  h6 {
+    font-weight: 700;
+    font-size: 0.975rem;
+  }
+
+  p {
+    line-height: 1.2;
+    font-size: 0.975rem;
+  }
+
+  .game-font {
+    font-family: 'Pokemon GB';
+    letter-spacing: -1.25px;
+  }
+
+  // Pokemon class type
+  .normal-type {
+    background-color: $pokemon-type-normal;
+  }
+  .fire-type {
+    background-color: $pokemon-type-fire;
+  }
+  .water-type {
+    background-color: $pokemon-type-water;
+  }
+  .electric-type {
+    background-color: $pokemon-type-electric;
+  }
+  .grass-type {
+    background-color: $pokemon-type-grass;
+  }
+  .ice-type {
+    background-color: $pokemon-type-ice;
+  }
+  .fighting-type {
+    background-color: $pokemon-type-fighting;
+  }
+  .poison-type {
+    background-color: $pokemon-type-poison;
+  }
+  .ground-type {
+    background-color: $pokemon-type-ground;
+  }
+  .flying-type {
+    background-color: $pokemon-type-flying;
+  }
+  .psychic-type {
+    background-color: $pokemon-type-psychic;
+  }
+  .bug-type {
+    background-color: $pokemon-type-bug;
+  }
+  .rock-type {
+    background-color: $pokemon-type-rock;
+  }
+  .ghost-type {
+    background-color: $pokemon-type-ghost;
+  }
+  .dragon-type {
+    background-color: $pokemon-type-dragon;
+  }
+  .dark-type {
+    background-color: $pokemon-type-dark;
+  }
+  .steel-type {
+    background-color: $pokemon-type-steel;
+  }
+  .fairy-type {
+    background-color: $pokemon-type-fairy;
+  }
+
+  .overflow-auto {
+    overflow: auto !important;
+  }
 }

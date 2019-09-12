@@ -1,25 +1,19 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
+import Header from '../Header';
 import { LandingPage } from '../../pages';
-import { AppWrapper, AppHeader, AppLink } from './App.module.scss';
+import { AppWrapper, AppContent } from './App.module.scss';
 
 const App: React.FC = () => (
   <div className={AppWrapper}>
-    <header className={AppHeader}>
-      <Route exact path="/" component={LandingPage} />
-      <p>
-        Edit <code>src/App.tsx</code> and save to reload
-      </p>
-      <a
-        className={AppLink}
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </a>
-    </header>
+    <Header />
+
+    <div className={AppContent}>
+      <Switch>
+        <Route exact path="/" component={LandingPage} />
+      </Switch>
+    </div>
   </div>
 );
 

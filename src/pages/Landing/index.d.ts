@@ -1,8 +1,11 @@
 import React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 
-export interface IProps {}
+import { IProps, IState } from './Landing';
 
-declare const LandingPage: React.FC<IProps & RouteComponentProps>;
+declare const LandingPage: React.PureComponent<
+  IProps & RouteComponentProps,
+  IState
+>;
 
 export default LandingPage;
