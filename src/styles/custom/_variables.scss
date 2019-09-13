@@ -1,0 +1,43 @@
+// Base Color
+$pokemon-red: #ff4040;
+$pokemon-dark-red: #d41515;
+$pokemon-yellow: #ffcd46;
+$pokemon-orange: #eb8563;
+$pokemon-white: #ffecec;
+$pokemon-font-color: #202020;
+
+// Types Color
+$pokemon-type-normal: #a8a77a;
+$pokemon-type-fire: #ee8130;
+$pokemon-type-water: #6390f0;
+$pokemon-type-electric: #f7d02c;
+$pokemon-type-grass: #7ac74c;
+$pokemon-type-ice: #96d9d6;
+$pokemon-type-fighting: #c22e28;
+$pokemon-type-poison: #a33ea1;
+$pokemon-type-ground: #e2bf65;
+$pokemon-type-flying: #a98ff3;
+$pokemon-type-psychic: #f95587;
+$pokemon-type-bug: #a6b91a;
+$pokemon-type-rock: #b6a136;
+$pokemon-type-ghost: #735797;
+$pokemon-type-dragon: #6f35fc;
+$pokemon-type-dark: #705746;
+$pokemon-type-steel: #b7b7ce;
+$pokemon-type-fairy: #d685ad;
+
+// Breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+);

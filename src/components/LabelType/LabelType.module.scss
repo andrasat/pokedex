@@ -1,0 +1,9 @@
+.AlertWrapper {
+  display: inline-block;
+  margin-right: 0.25rem;
+  margin-bottom: 0.1rem !important;
+}
+
+.AlertWrapper:nth-last-child() {
+  margin-right: 0;
+}
