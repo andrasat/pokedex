@@ -34,7 +34,7 @@ class LandingPage extends React.PureComponent<
     const { location } = this.props;
     const { pokemons: pokemonState, fetchCount } = this.state;
 
-    const first = (page + 2) * 10;
+    const first = (page + 1) * 10;
 
     const { pokemons } = await this.request.getPokemons(first);
     this.setState(prev => ({ fetchCount: prev.fetchCount + 1 }));
@@ -58,7 +58,7 @@ class LandingPage extends React.PureComponent<
       return checkFilter && checkName;
     });
 
-    if (filteredPokemon.length === pokemonState.length && fetchCount > 2) {
+    if (filteredPokemon.length === pokemonState.length && fetchCount > 7) {
       this.setState({ hasMoreItems: false, fetchCount: 0 });
     }
 
