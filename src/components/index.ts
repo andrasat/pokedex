@@ -5,3 +5,4 @@ export { default as Container } from './Container';
 export { default as LabelType } from './LabelType';
 export { default as Loader } from './Loader';
 export { default as Detail } from './Detail';
+export { default as FilterButton } from './FilterButton';

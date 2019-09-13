@@ -1,4 +1,5 @@
 import React from 'react';
+import qs from 'qs';
 import { RouteComponentProps } from 'react-router-dom';
 import InfiniteScroller from 'react-infinite-scroller';
 
@@ -10,6 +11,7 @@ export interface IProps {}
 export interface IState {
   pokemons: IPokemon[];
   hasMoreItems: boolean;
+  fetchCount: number;
 }
 
 class LandingPage extends React.PureComponent<
@@ -22,19 +24,45 @@ class LandingPage extends React.PureComponent<
     super(props);
     this.state = {
       pokemons: [],
-      hasMoreItems: true
+      hasMoreItems: true,
+      fetchCount: 0
     };
     this.fetchData = this.fetchData.bind(this);
   }
 
   private async fetchData(page: number) {
-    const { pokemons: pokemonState } = this.state;
-    const first = (page + 1) * 10;
+    const { location } = this.props;
+    const { pokemons: pokemonState, fetchCount } = this.state;
+
+    const first = (page + 2) * 10;
+
     const { pokemons } = await this.request.getPokemons(first);
+    this.setState(prev => ({ fetchCount: prev.fetchCount + 1 }));
+
     if (pokemons.length === pokemonState.length) {
       this.setState({ hasMoreItems: false });
     }
-    this.setState({ pokemons });
+
+    const query = qs.parse(location.search.replace(/\?/g, ''));
+    const filteredPokemon = pokemons.filter(each => {
+      let checkFilter = true;
+      let checkName = true;
+
+      if (query.filter) {
+        checkFilter = each.types.includes(query.filter);
+      }
+      if (query.name) {
+        checkName = new RegExp(`/${query.name}/`, 'gi').test(each.name);
+      }
+
+      return checkFilter && checkName;
+    });
+
+    if (filteredPokemon.length === pokemonState.length && fetchCount > 2) {
+      this.setState({ hasMoreItems: false, fetchCount: 0 });
+    }
+
+    this.setState({ pokemons: filteredPokemon });
   }
 
   render() {
@@ -65,7 +93,13 @@ class LandingPage extends React.PureComponent<
         hasMore={hasMoreItems}
         loader={<Loader key={0} />}
       >
-        <Container isOverflow>{cards}</Container>
+        <Container isOverflow>
+          {pokemons.length > 0 || hasMoreItems ? (
+            cards
+          ) : (
+            <p className="game-font">Pokemon not found...</p>
+          )}
+        </Container>
       </InfiniteScroller>
     );
   }
