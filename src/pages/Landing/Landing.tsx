@@ -2,9 +2,9 @@ import React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import InfiniteScroller from 'react-infinite-scroller';
 
-import Client from '../../graphql/Client';
+import Client from '../../graphql/client';
 import { IPokemon } from '../../interfaces/pokemon.interface';
-import { Card, Container, LabelType } from '../../components';
+import { Card, Container, LabelType, Loader } from '../../components';
 
 export interface IProps {}
 export interface IState {
@@ -44,12 +44,13 @@ class LandingPage extends React.PureComponent<
     const cards = pokemons.map(each => {
       return (
         <Card
+          style={{ width: 300, minHeight: 360 }}
           key={each.id}
           imageSrc={each.image}
           titleText={each.name}
           cardOnClickHandler={() => history.push(`/${each.name}`)}
           footer={each.types.map(type => (
-            <LabelType key={`_${type}`} pokemonType={type}>
+            <LabelType key={`_${each.id}_${type}`} pokemonType={type}>
               <span className="game-font-white">{type}</span>
             </LabelType>
           ))}
@@ -62,11 +63,7 @@ class LandingPage extends React.PureComponent<
         pageStart={0}
         loadMore={this.fetchData}
         hasMore={hasMoreItems}
-        loader={
-          <p key={0} style={{ textAlign: 'center' }} className="game-font">
-            Loading...
-          </p>
-        }
+        loader={<Loader key={0} />}
       >
         <Container isOverflow>{cards}</Container>
       </InfiniteScroller>

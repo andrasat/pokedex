@@ -1,10 +1,16 @@
+@import '../../styles/custom/variables';
+@import '../../styles/custom/mixins';
+
 .CardWrapper {
   float: left;
   margin: 0.75rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
+
+  @include media-breakpoint-down(md) {
+    width: 100%;
+  }
 }
 
 .CardHeader {
@@ -25,5 +31,5 @@
 
 .CardImg {
   height: 256px;
-  width: 200px !important;
+  width: 200px;
 }

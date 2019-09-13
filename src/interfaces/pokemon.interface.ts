@@ -9,14 +9,14 @@ export interface IPokemon {
   height: IMinMax;
   classification: string;
   types: string[];
-  resistant: string;
+  resistant: string[];
   attacks: {
     fast: IAttack[];
     special: IAttack[];
   };
   weaknesses: string[];
   fleeRate: number;
-  maxCp: number;
+  maxCP: number;
   maxHP: number;
   evolutions: IPokemon[];
   evolutionRequirements: {

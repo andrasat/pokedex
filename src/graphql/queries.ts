@@ -4,74 +4,7 @@ export const getPokemons = `
       id
       number
       name
-      weight {
-        minimum
-        maximum
-      }
-      height {
-        minimum
-        maximum
-      }
-      classification
       types
-      resistant
-      attacks {
-        fast {
-          name
-          type
-          damage
-        }
-        special {
-          name
-          type
-          damage
-        }
-      }
-      weaknesses
-      fleeRate
-      maxCP
-      maxHP
-      evolutions {
-        id
-        number
-        name
-        weight {
-          minimum
-          maximum
-        }
-        height {
-          minimum
-          maximum
-        }
-        classification
-        types
-        resistant
-        attacks {
-          fast {
-            name
-            type
-            damage
-          }
-          special {
-            name
-            type
-            damage
-          }
-        }
-        weaknesses
-        fleeRate
-        maxCP
-        maxHP
-        evolutionRequirements {
-          amount
-          name
-        }
-        image
-      }
-      evolutionRequirements {
-        amount
-        name
-      }
       image
     }
   }
@@ -83,6 +16,8 @@ export const getOnePokemonByName = `
       id
       number
       name
+      maxHP
+      maxCP
       weight {
         minimum
         maximum
@@ -94,6 +29,7 @@ export const getOnePokemonByName = `
       classification
       types
       resistant
+      weaknesses
       attacks {
         fast {
           name
@@ -106,45 +42,10 @@ export const getOnePokemonByName = `
           damage
         }
       }
-      weaknesses
-      fleeRate
-      maxCP
-      maxHP
       evolutions {
         id
         number
         name
-        weight {
-          minimum
-          maximum
-        }
-        height {
-          minimum
-          maximum
-        }
-        classification
-        types
-        resistant
-        attacks {
-          fast {
-            name
-            type
-            damage
-          }
-          special {
-            name
-            type
-            damage
-          }
-        }
-        weaknesses
-        fleeRate
-        maxCP
-        maxHP
-        evolutionRequirements {
-          amount
-          name
-        }
         image
       }
       evolutionRequirements {
@@ -162,6 +63,8 @@ export const getOnePokemonById = `
       id
       number
       name
+      maxHP
+      maxCP
       weight {
         minimum
         maximum
@@ -173,6 +76,7 @@ export const getOnePokemonById = `
       classification
       types
       resistant
+      weaknesses
       attacks {
         fast {
           name
@@ -185,45 +89,10 @@ export const getOnePokemonById = `
           damage
         }
       }
-      weaknesses
-      fleeRate
-      maxCP
-      maxHP
       evolutions {
         id
         number
         name
-        weight {
-          minimum
-          maximum
-        }
-        height {
-          minimum
-          maximum
-        }
-        classification
-        types
-        resistant
-        attacks {
-          fast {
-            name
-            type
-            damage
-          }
-          special {
-            name
-            type
-            damage
-          }
-        }
-        weaknesses
-        fleeRate
-        maxCP
-        maxHP
-        evolutionRequirements {
-          amount
-          name
-        }
         image
       }
       evolutionRequirements {

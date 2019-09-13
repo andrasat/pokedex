@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import Card from 'react-bootstrap/Card';
 
 import {
@@ -12,6 +13,7 @@ import {
 export interface IProps {
   imageSrc?: string;
   titleText?: string;
+  style?: React.CSSProperties;
   footer?: React.ReactNode;
   cardOnClickHandler?: () => void;
 }
@@ -21,16 +23,17 @@ class CustomCard extends React.PureComponent<IProps> {
     const {
       imageSrc,
       titleText,
-      children,
+      style,
+      footer,
       cardOnClickHandler,
-      footer
+      children
     } = this.props;
 
     return (
       <Card
-        style={{ width: 300, minHeight: 360 }}
+        style={style}
         onClick={cardOnClickHandler}
-        className={CardWrapper}
+        className={classNames(CardWrapper, { clickable: cardOnClickHandler!! })}
       >
         <Card.Header className={`${CardHeader} game-font`}>
           {titleText || 'None'}
@@ -42,7 +45,9 @@ class CustomCard extends React.PureComponent<IProps> {
             src={imageSrc || 'https://via.placeholder.com/360'}
           />
         </div>
-        {children && <Card.Body>{children}</Card.Body>}
+        {children && (
+          <Card.Body style={{ width: '100%' }}>{children}</Card.Body>
+        )}
         {footer && <Card.Footer className={CardFooter}>{footer}</Card.Footer>}
       </Card>
     );
