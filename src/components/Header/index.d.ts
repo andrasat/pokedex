@@ -1,6 +1,6 @@
 import React from 'react';
 
-export interface IProps {}
+import { IProps } from './Header';
 
 declare const Header: React.FC<IProps>;
 

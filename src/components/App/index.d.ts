@@ -1,6 +1,6 @@
 import React from 'react';
 
-export interface IProps {}
+import { IProps } from './App';
 
 declare const App: React.FC<IProps>;
 

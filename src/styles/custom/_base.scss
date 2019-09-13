@@ -42,9 +42,18 @@ body {
     font-size: 0.975rem;
   }
 
+  span {
+    line-height: 0.75;
+    font-size: 0.775rem;
+  }
+
   .game-font {
-    font-family: 'Pokemon GB';
-    letter-spacing: -1.25px;
+    @include game-font;
+  }
+
+  .game-font-white {
+    @include game-font;
+    color: $pokemon-white !important;
   }
 
   // Pokemon class type

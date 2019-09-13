@@ -6,7 +6,9 @@ import Pokeball from '../../assets/images/pokeball.png';
 
 import { HeaderWrapper } from './Header.module.scss';
 
-const Header: React.FC = () => (
+export interface IProps {}
+
+const Header: React.FC<IProps> = () => (
   <Navbar bg="light" expand="sm" className={HeaderWrapper}>
     <Navbar.Brand href="/">
       <h5>

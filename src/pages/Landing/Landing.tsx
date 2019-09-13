@@ -4,7 +4,7 @@ import InfiniteScroller from 'react-infinite-scroller';
 
 import Client from '../../graphql/Client';
 import { IPokemon } from '../../interfaces/pokemon.interface';
-import { Card, Container } from '../../components';
+import { Card, Container, LabelType } from '../../components';
 
 export interface IProps {}
 export interface IState {
@@ -24,6 +24,7 @@ class LandingPage extends React.PureComponent<
       pokemons: [],
       hasMoreItems: true
     };
+    this.fetchData = this.fetchData.bind(this);
   }
 
   private async fetchData(page: number) {
@@ -37,11 +38,22 @@ class LandingPage extends React.PureComponent<
   }
 
   render() {
+    const { history } = this.props;
     const { pokemons, hasMoreItems } = this.state;
 
     const cards = pokemons.map(each => {
       return (
-        <Card key={each.id} imageSrc={each.image} cardTitleText={each.name} />
+        <Card
+          key={each.id}
+          imageSrc={each.image}
+          titleText={each.name}
+          cardOnClickHandler={() => history.push(`/${each.name}`)}
+          footer={each.types.map(type => (
+            <LabelType key={`_${type}`} pokemonType={type}>
+              <span className="game-font-white">{type}</span>
+            </LabelType>
+          ))}
+        />
       );
     });
 

@@ -4,7 +4,6 @@ import classNames from 'classnames';
 import { ContainerWrapper } from './Container.module.scss';
 
 export interface IProps {
-  children: JSX.Element | JSX.Element[];
   isOverflow?: boolean;
 }
 

@@ -1,5 +1,5 @@
 import { GraphQLClient } from 'graphql-request';
-import { getPokemons, getOnePokemonByName, getOnePokemonById } from './Query';
+import { getPokemons, getOnePokemonByName, getOnePokemonById } from './queries';
 
 import { IPokemon } from '../interfaces/pokemon.interface';
 
