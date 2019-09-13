@@ -52,7 +52,7 @@ class LandingPage extends React.PureComponent<
         checkFilter = each.types.includes(query.filter);
       }
       if (query.name) {
-        checkName = new RegExp(`/${query.name}/`, 'gi').test(each.name);
+        checkName = new RegExp(`${query.name}`, 'gi').test(each.name);
       }
 
       return checkFilter && checkName;
